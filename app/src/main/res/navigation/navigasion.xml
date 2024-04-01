@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigasion"
+    app:startDestination="@id/cartasFragment">
+
+    <fragment
+        android:id="@+id/cartasFragment"
+        android:name="com.juanfra.carticasmagic.CartasFragment"
+        android:label="fragment_cartas"
+        tools:layout="@layout/fragment_cartas" />
+</navigation>
