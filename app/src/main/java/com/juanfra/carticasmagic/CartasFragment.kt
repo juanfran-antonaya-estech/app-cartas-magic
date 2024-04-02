@@ -1,6 +1,7 @@
 package com.juanfra.carticasmagic
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,9 @@ class CartasFragment : Fragment() {
         val jsonString = helper.cargarJson("json/cartas", requireActivity().assets)
         var listadoCartas = helper.conseguirListadoCartas(jsonString)
         listadoCartas = ArrayList<Carta>(listadoCartas.filter { !it.imageUrl.isNullOrEmpty() })
+        listadoCartas.sortBy { helper.getNameLang(it, "Spanish")?.replace("Á", "A") }
+
+        Log.d("Colores diferentes", getDiffColours(listadoCartas))
 
 
 
@@ -40,5 +44,18 @@ class CartasFragment : Fragment() {
         binding.rvCartas.adapter = adaptador
         binding.rvCartas.layoutManager = layoutmanager
 
+    }
+
+    private fun getDiffColours(listadoCartas: ArrayList<Carta>): String {
+        val array = ArrayList<String>()
+
+        for (i in listadoCartas){
+            for(j in i.colors!!) {
+                if (!array.contains(j)){
+                    array.add(j)
+                }
+            }
+        }
+        return array.toString()
     }
 }
