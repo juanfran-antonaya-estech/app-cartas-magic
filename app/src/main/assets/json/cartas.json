@@ -1,5 +1,4 @@
-{
-  "cards": [
+[
     {
       "name": "Ancestor's Chosen",
       "manaCost": "{5}{W}{W}",
@@ -28,7 +27,7 @@
       "toughness": "4",
       "layout": "normal",
       "multiverseid": "130550",
-      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=130550&type=card",
+      "imageUrl": "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=130550&type=card",
       "variations": [
         "b7c19924-b4bf-56fc-aa73-f586e940bd42"
       ],
@@ -14039,4 +14038,3 @@
       "id": "e4b4684b-8e14-5fcf-9286-497b7afd5b3a"
     }
   ]
-}

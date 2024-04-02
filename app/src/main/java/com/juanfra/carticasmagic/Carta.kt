@@ -25,7 +25,7 @@ data class Carta (
     val layout: String?,
     val multiverseid: String?,
     val imageUrl: String?,
-    val variations: String?,
+    val variations: ArrayList<String>?,
     val foreignNames: ArrayList<ForeignName>?,
     val printings: ArrayList<String>?,
     val originalText: String?,

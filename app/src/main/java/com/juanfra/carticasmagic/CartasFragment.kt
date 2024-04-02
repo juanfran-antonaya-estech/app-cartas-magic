@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.GridLayout
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.juanfra.carticasmagic.databinding.FragmentCartasBinding
 
 
@@ -27,10 +29,13 @@ class CartasFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val jsonString = helper.cargarJson("json/cartas", requireActivity().assets)
-        val listadoCartas = helper.conseguirListadoCartas(jsonString)
+        var listadoCartas = helper.conseguirListadoCartas(jsonString)
+        listadoCartas = ArrayList<Carta>(listadoCartas.filter { !it.imageUrl.isNullOrEmpty() })
+
+
 
         val adaptador = AdaptadorCartas(listadoCartas)
-        val layoutmanager = GridLayoutManager(context, 3)
+        val layoutmanager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
 
         binding.rvCartas.adapter = adaptador
         binding.rvCartas.layoutManager = layoutmanager

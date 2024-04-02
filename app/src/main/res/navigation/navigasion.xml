@@ -8,6 +8,32 @@
     <fragment
         android:id="@+id/cartasFragment"
         android:name="com.juanfra.carticasmagic.CartasFragment"
-        android:label="fragment_cartas"
-        tools:layout="@layout/fragment_cartas" />
+        android:label="Cartas"
+        tools:layout="@layout/fragment_cartas">
+        <action
+            android:id="@+id/action_cartasFragment_to_fragmentCartaDetalle"
+            app:destination="@id/fragmentCartaDetalle"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCartaDetalle"
+        android:name="com.juanfra.carticasmagic.FragmentCartaDetalle"
+        android:label="Carta"
+        tools:layout="@layout/fragment_carta_detalle" >
+        <action
+            android:id="@+id/action_fragmentCartaDetalle_to_fragmentElegirIdioma"
+            app:destination="@id/fragmentElegirIdioma"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentElegirIdioma"
+        android:name="com.juanfra.carticasmagic.FragmentElegirIdioma"
+        android:label="fragment_elegir_idioma"
+        tools:layout="@layout/fragment_elegir_idioma" />
 </navigation>
